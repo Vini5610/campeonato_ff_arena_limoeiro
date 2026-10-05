@@ -62,9 +62,9 @@ h2{font-size:clamp(44px,7vw,84px)}
 .btn-outline-orange:hover{background:rgba(255,90,20,.12);color:var(--orange);box-shadow:0 0 24px rgba(255,90,20,.3)}
 .btn-group{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 nav{position:fixed;top:calc(16px + env(safe-area-inset-top,0px));left:0;right:0;z-index:10}
-nav .wrap>div{display:flex;align-items:center;justify-content:space-between;background:rgba(5,9,13,.85);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:10px;padding:12px 20px}
-.logo{font-weight:800;letter-spacing:1px;font-size:20px;text-transform:uppercase;display:flex;gap:12px;align-items:center}
-.logo i{width:34px;height:34px;border:2px solid var(--lime);border-radius:50%;display:grid;place-items:center;color:var(--lime);font-style:normal;font-size:16px}
+.logo{display:inline-flex;align-items:center;text-decoration:none}
+.logo-img{height:44px;max-height:44px;width:auto;object-fit:contain;display:block;filter:drop-shadow(0 0 1px rgba(255,255,255,.35))}
+@media(max-width:820px){.logo-img{height:36px;max-height:36px}}
 nav ul{display:flex;gap:36px;list-style:none;font-weight:600;color:var(--mut);text-transform:uppercase;font-size:16px}
 nav ul a:hover{color:var(--lime)}
 .hero{min-height:100vh;display:flex;align-items:flex-end;padding:140px 0 60px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 75% 40%,rgba(163,255,0,.18),transparent 55%),radial-gradient(ellipse at 95% 10%,rgba(255,120,30,.25),transparent 40%),var(--bg)}
@@ -147,7 +147,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
 </head>
 <body>
 <nav><div class="wrap"><div>
-<a href="#top" class="logo"><i>⌖</i><span>Arena <span class="lime">Limoeiro</span></span></a>
+<a href="#top" class="logo"><img src="files/logo-arena.png" alt="Arena Limoeiro" class="logo-img"></a>
 <ul><li><a href="#premiacao">Premiação</a></li><li><a href="#regras">Regras</a></li><li><a href="#duvidas">Dúvidas</a></li></ul>
 <a href="#inscricao" class="btn">Inscreva-se</a>
 </div></div></nav>
@@ -271,7 +271,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
 <footer class="site-footer"><div class="wrap">
   <div class="ft-top">
     <div>
-      <a href="#top" class="logo"><i>⌖</i><span>Arena <span class="lime">Limoeiro</span></span></a>
+      <a href="#top" class="logo"><img src="files/logo-arena.png" alt="Arena Limoeiro" class="logo-img" style="height:50px;max-height:50px"></a>
       <p>Campeonato de Free Fire 4x4 em Limoeiro, Pernambuco. Competição justa, premiação real.</p>
     </div>
     <div><h5>Navegação</h5><ul>
