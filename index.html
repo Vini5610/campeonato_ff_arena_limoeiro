@@ -52,8 +52,15 @@ a{color:inherit;text-decoration:none}
 h1,h2{text-transform:uppercase;font-weight:800;line-height:.92}
 h2{font-size:clamp(44px,7vw,84px)}
 .lime{color:var(--lime)}.or{color:var(--orange)}
-.btn{display:inline-block;background:var(--lime);color:#000;font-weight:800;text-transform:uppercase;padding:10px 18px;border-radius:6px;transition:.2s}
+.btn{display:inline-block;background:var(--lime);color:#000;font-weight:800;text-transform:uppercase;padding:10px 18px;border-radius:6px;transition:.2s;text-align:center;cursor:pointer}
 .btn:hover{box-shadow:0 0 24px rgba(163,255,0,.5);transform:translateY(-1px)}
+.btn-orange{background:var(--orange);color:#fff}
+.btn-orange:hover{box-shadow:0 0 24px rgba(255,90,20,.5)}
+.btn-outline{background:transparent;color:var(--txt);border:1px solid var(--lime)}
+.btn-outline:hover{background:rgba(163,255,0,.12);color:var(--lime);box-shadow:0 0 24px rgba(163,255,0,.3)}
+.btn-outline-orange{background:transparent;color:var(--txt);border:1px solid var(--orange)}
+.btn-outline-orange:hover{background:rgba(255,90,20,.12);color:var(--orange);box-shadow:0 0 24px rgba(255,90,20,.3)}
+.btn-group{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 nav{position:fixed;top:calc(16px + env(safe-area-inset-top,0px));left:0;right:0;z-index:10}
 nav .wrap>div{display:flex;align-items:center;justify-content:space-between;background:rgba(5,9,13,.85);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:10px;padding:12px 20px}
 .logo{font-weight:800;letter-spacing:1px;font-size:20px;text-transform:uppercase;display:flex;gap:12px;align-items:center}
@@ -124,8 +131,12 @@ section{padding:100px 0}
 .box{background:#030506;border:1px solid var(--line);border-radius:10px;padding:32px}
 .box h4{font-size:32px;font-weight:500;margin:10px 0 20px}
 .st{display:flex;gap:14px;align-items:center;color:var(--mut);margin-bottom:14px}
-.st b{width:30px;height:30px;border:1px solid rgba(163,255,0,.4);background:rgba(163,255,0,.08);color:var(--lime);display:grid;place-items:center;border-radius:4px;font-size:12px;font-family:'Space Mono',monospace}
-.big{display:flex;justify-content:space-between;font-size:22px;padding:22px 26px;border-radius:6px;margin:26px 0 12px;box-shadow:0 0 40px rgba(163,255,0,.25)}
+.big{display:flex;justify-content:space-between;align-items:center;font-size:22px;padding:22px 26px;border-radius:6px;margin:20px 0 12px;box-shadow:0 0 40px rgba(163,255,0,.25);text-decoration:none}
+.big.btn-orange{box-shadow:0 0 40px rgba(255,90,20,.25)}
+.big.btn-outline{box-shadow:none;border:1px solid var(--line)}
+.big.btn-outline:hover{border-color:var(--lime);box-shadow:0 0 24px rgba(163,255,0,.2)}
+.btn-stack{display:flex;flex-direction:column;gap:14px;margin:24px 0 14px}
+.btn-stack .big{margin:0}
 .note{font-size:12px;color:var(--mut)}
 .lim{display:flex;gap:14px;align-items:center;margin-top:34px;color:var(--mut)}.lim b{display:block;color:var(--txt);text-transform:uppercase}
 footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:var(--mut);font-size:14px}
@@ -145,7 +156,11 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
 <div class="badge mono"><b></b><span class="lime">Inscrições abertas</span><span style="color:var(--mut)">Edição 4v4</span></div>
 <h1><small>Campeonato</small><span class="lime">Arena Limoeiro<br>Free Fire <span class="or">4x4</span></span></h1>
 <p>Monte seu squad. Entre na arena. Mostre quem domina o contra esquadrão.</p>
+<div class="btn-group">
 <a href="#inscricao" class="btn">Quero participar</a>
+<!-- Descomente a linha abaixo para adicionar botão de link privado no topo: -->
+<!-- <a href="#" class="btn btn-outline" target="_blank" rel="noopener">Link Privado ↗</a> -->
+</div>
 </div></header>
 
 <section id="premiacao"><div class="wrap two">
@@ -199,8 +214,28 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
 <div class="st"><b>02</b>Aguarde a equipe entrar em contato atraves whatsapp ou instagran.</div>
 <div class="st"><b>03</b>Confirme o pagamento de R$ 60,00 por equipe.</div>
 
-<!-- COLOQUE SEU LINK DE INSCRIÇÃO NO href ABAIXO -->
-<a class="btn big" id="link" href="https://form.svhrt.com/6ab66f1f788fe1a732af7913" target="_blank" rel="noopener">Fazer minha inscrição <span>↗</span></a>
+<!-- ============================================================== -->
+<!-- BOTÕES DE INSCRIÇÃO E LINKS PRIVADOS                          -->
+<!-- Altere os links no 'href' e os textos dos botões como desejar -->
+<!-- ============================================================== -->
+<div class="btn-stack">
+  <!-- Botão 1: Inscrição Principal -->
+  <a class="btn big" id="link" href="https://form.svhrt.com/6ab66f1f788fe1a732af7913" target="_blank" rel="noopener">
+    Fazer minha inscrição <span>↗</span>
+  </a>
+
+  <!-- Botão 2: Link Privado (Ex: Grupo WhatsApp, Sala VIP, Tabela Fechada, Discord) -->
+  <a class="btn big btn-orange" href="#" target="_blank" rel="noopener">
+    Entrar no Grupo / Link Privado <span>↗</span>
+  </a>
+
+  <!-- Botão 3: Link Extra Opcional (Descomente se quiser usar mais um botão) -->
+  <!--
+  <a class="btn big btn-outline" href="#" target="_blank" rel="noopener">
+    Outro Link Privado <span>↗</span>
+  </a>
+  -->
+</div>
 <p class="note mono">Inscrição: R$ 60,00 por equipe · Vagas por ordem de confirmação</p></div>
 </div></section>
 
